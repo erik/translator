@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
+
+require 'translator'
+
+ARGV.each { |arg|
+  puts "===> #{ Translator.around_the_world(arg, :start => :en, :verbose => true) }"
+}
+
+if ARGV.empty?
+  puts "usage: #{$0} phrases+"
+end
